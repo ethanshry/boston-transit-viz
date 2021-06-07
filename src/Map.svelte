@@ -1,6 +1,16 @@
 <script>
   export let lineName;
   export let showMap;
+
+  let data = [];
+
+  setInterval(async () => {
+    // todo get data
+    let apiData = await fetch("https://api-v3.mbta.com/", {
+      headers: { "x-api-key": process.env.API_TOKEN },
+    });
+    apiData = await apiData.json();
+  });
 </script>
 
 <map>
